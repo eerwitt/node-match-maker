@@ -21,19 +21,11 @@ A match making game server designed to bring together players based on a weighte
 
 #### Node
 
-Using [Node.js][node] primarily for the base server component in this version. It is a slightly unstable production server yet it has a great deal of trending usage and for most cases works quite well. It is possible to replace with more tested production systems such as [Eventmachine][em] or [Twisted][td].
-
-Any of these systems should give a good evented framework which can easily be communicated between experienced developers and does not require detailed insider information to maintain.
-
-#### Ruby
-
-Primarily this project uses [Node.js][node] but [Ruby][ruby] is used on some environmental tasks which [node][node] does not handle as easily. These tasks are mainly for use in a development environment and should be avoided for production tasks.
+Using [Node.js][node] primarily for the base server component in this version. It is possible to replace with more tested production systems such as [Eventmachine][em] or [Twisted][td].
 
 #### Coffeescript
 
-All Javascript is written in [Coffeescript][cs] because it protects from some novice Javascript mistakes. It is also fun to write and the generated Javascript is of a good quality.
-
-[EMCA 6][emca] includes classes yet [v8][v8] does not support it yet.
+All Javascript is written in [Coffeescript][cs].
 
 #### Jasmine
 
@@ -63,7 +55,6 @@ The storage of user related information is stored in [MongoDB][mon] in order to 
 		-> /controllers			#controller for business logic
 		-> /views				#format for the data being returned for each request
 	-> packages.json			#npm packages required to run project
-	-> Gemfile					#any required ruby gems used by the project
 
 ---
 
@@ -73,36 +64,28 @@ In order to run the project the required libraries need to be installed.
 
 Installation of required [NPM][npm] packages can be installed by running ```npm install``` from the base project directory.
 
-Required [Gems][gems] can be installed by running ```bundle install``` from within the base project directory.
+Once the required libraries are installed the server can be run with the command ```mongod``` which will also start [MongoDB][mon] on your local system.
 
-Once the required libraries are installed the server can be run with the command ```foreman start``` which will also start [MongoDB][mon] on your local system.
-
-Tests can be run with the command ```rake test``` then opening up the test output URL.
+Tests can be run with the command ```jasmine-node``` then opening up the test output URL.
 
 ##### Overview
 
 ```bash
 
 	# install node.js
-	# install ruby preferably from rvm
 	cd /home/user/projects/match-maker
 	npm install
-	bundle install
-	rake test
-	foreman start
+	jasmine-node
+	mongod
+	node app/server.coffee
 
 ```
 
-[gems]: http://rubygems.org/
 [node]: http://nodejs.org/
-[haml]: http://haml.info/
 [em]: http://rubyeventmachine.com/
 [td]: http://twistedmatrix.com/
 [cs]: http://coffeescript.org/
-[emca]: http://en.wikipedia.org/wiki/ECMAScript
-[v8]: http://code.google.com/p/v8/
 [jas]: http://pivotal.github.com/jasmine/
 [bdd]: http://en.wikipedia.org/wiki/Behavior-driven_development
 [mon]: http://www.mongodb.org/
-[ruby]: http://www.ruby-lang.org/
 [npm]: https://npmjs.org/
