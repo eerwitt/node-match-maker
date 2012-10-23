@@ -3,6 +3,7 @@
   "description": "A match making system to match players of online games.",
   "author": "Erik Erwitt <eerwitt@gmail.com>",
   "dependencies": {
+    "mongodb": "1.1.11"
   },
   "devDependencies": {
     "jasmine-node": "1.0.26"
