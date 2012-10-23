@@ -66,7 +66,7 @@ Installation of required [NPM][npm] packages can be installed by running ```npm 
 
 Once the required libraries are installed the server can be run with the command ```mongod``` which will also start [MongoDB][mon] on your local system.
 
-Tests can be run with the command ```jasmine-node``` then opening up the test output URL.
+Tests can be run with the command ```jasmine-node --autotest --color --coffee spec``` then opening up the test output URL.
 
 ##### Overview
 
@@ -75,7 +75,7 @@ Tests can be run with the command ```jasmine-node``` then opening up the test ou
 	# install node.js
 	cd /home/user/projects/match-maker
 	npm install
-	jasmine-node
+	jasmine-node --color --coffee spec
 	mongod
 	node app/server.coffee
 
