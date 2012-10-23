@@ -4,6 +4,6 @@
 *.js
 
 # Any build files from node
-build
+node_modules
 
 log
