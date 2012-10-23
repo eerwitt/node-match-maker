@@ -54,6 +54,8 @@ The storage of user related information is stored in [MongoDB][mon] in order to 
 		-> /views				#response format tests
 	-> /log						#development logs stored here (prod goes to logging service)
 	-> /config					#configuration files
+		-> /locale				#language translations (probably not needed for this)
+			-> /{en,eu,es,…}
 		-> /environments		#separate configurations for each environment in YAML format
 			-> /{development,staging,production}.yml
 	-> /app						#base server directory
@@ -92,7 +94,7 @@ Tests can be run with the command ```rake test``` then opening up the test outpu
 ```
 
 [gems]: http://gems.org
-[node]: http://nodejs.com
+[node]: http://nodejs.org/
 [haml]: http://haml.com
 [em]: http://eventmachine.com
 [td]: http://twisted.com
@@ -103,4 +105,4 @@ Tests can be run with the command ```rake test``` then opening up the test outpu
 [bdd]: http://bdd.com
 [mon]: http://mongo.com
 [ruby]: http://ruby.com
-[npm]: http://npm.com
+[npm]: https://npmjs.org/
