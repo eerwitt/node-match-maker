@@ -1,0 +1,11 @@
+{
+  "name": "Match Maker",
+  "description": "A match making system to match players of online games.",
+  "author": "Erik Erwitt <eerwitt@gmail.com>",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "jasmine-node": "1.0.26"
+  },
+  "engine": "node == 0.8.12"
+}
