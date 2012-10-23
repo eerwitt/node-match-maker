@@ -81,11 +81,13 @@ Tests can be run with the command ```rake test``` then opening up the test outpu
 
 ```bash
 
-cd /home/user/projects/match-maker
-npm install
-bundle install
-rake test
-foreman start
+	# install node.js
+	# install ruby preferably from rvm
+	cd /home/user/projects/match-maker
+	npm install
+	bundle install
+	rake test
+	foreman start
 
 ```
 
