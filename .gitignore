@@ -1,0 +1,9 @@
+*.swp
+
+# Only coffee files should be checked in
+*.js
+
+# Any build files from node
+build
+
+log
