@@ -4,6 +4,19 @@ A match making game server designed to bring together players based on a weighte
 
 ---
 
+## Project ideas
+
+1. Connects to database and gets a list of online users (unbounded?)
+2. Stores a vector filled with meta data about previous games and connections
+3. Offline summations over previous games to cluster players for recommendations (maybe)
+4. Weighted decision tree of basic checks between players during each connection (svd?)
+	+ Geolocation distance (mercator projection based on lat/lng or lib?)
+	+ Previous plays (might need to store some data in a graph)
+	+ Latency
+	+ Estimated level (could use #3)
+
+---
+
 ## Technical Frameworks
 
 #### Node
@@ -11,6 +24,10 @@ A match making game server designed to bring together players based on a weighte
 Using [Node.js][node] primarily for the base server component in this version. It is a slightly unstable production server yet it has a great deal of trending usage and for most cases works quite well. It is possible to replace with more tested production systems such as [Eventmachine][em] or [Twisted][td].
 
 Any of these systems should give a good evented framework which can easily be communicated between experienced developers and does not require detailed insider information to maintain.
+
+#### Ruby
+
+Primarily this project uses [Node.js][node] but [Ruby][ruby] is used on some environmental tasks which [node][node] does not handle as easily. These tasks are mainly for use in a development environment and should be avoided for production tasks.
 
 #### Coffeescript
 
@@ -30,7 +47,7 @@ The storage of user related information is stored in [MongoDB][mon] in order to 
 
 ## Project Layout
 
-	* /							#root project director
+	* /							#root project directory
 	-> /spec					#bdd tests
 		-> /models				#data abstraction layer tests
 		-> /controllers			#business logic
@@ -43,8 +60,36 @@ The storage of user related information is stored in [MongoDB][mon] in order to 
 		-> /models				#data abstraction layer
 		-> /controllers			#controller for business logic
 		-> /views				#format for the data being returned for each request
-	
+	-> packages.json			#npm packages required to run project
+	-> Gemfile					#any required ruby gems used by the project
 
+---
+
+## Getting Started
+
+In order to run the project the required libraries need to be installed.
+
+Installation of required [NPM][npm] packages can be installed by running ```npm install``` from the base project directory.
+
+Required [Gems][gems] can be installed by running ```bundle install``` from within the base project directory.
+
+Once the required libraries are installed the server can be run with the command ```foreman start``` which will also start [MongoDB][mon] on your local system.
+
+Tests can be run with the command ```rake test``` then opening up the test output URL.
+
+##### Overview
+
+```bash
+
+cd /home/user/projects/match-maker
+npm install
+bundle install
+rake test
+foreman start
+
+```
+
+[gems]: http://gems.org
 [node]: http://nodejs.com
 [haml]: http://haml.com
 [em]: http://eventmachine.com
@@ -55,3 +100,5 @@ The storage of user related information is stored in [MongoDB][mon] in order to 
 [jas]: http://jasmine.com
 [bdd]: http://bdd.com
 [mon]: http://mongo.com
+[ruby]: http://ruby.com
+[npm]: http://npm.com
