@@ -48,13 +48,13 @@ The storage of user related information is stored in [MongoDB][mon] in order to 
 	-> /config					#configuration files
 		-> /locale				#language translations (probably not needed for this)
 			-> /{en,eu,es,…}
-		-> /environments		#separate configurations for each environment in YAML format
+		-> /environments		#separate configurations for each environment in YAML format (npm config?)
 			-> /{development,staging,production}.yml
 	-> /app						#base server directory
 		-> /models				#data abstraction layer
 		-> /controllers			#controller for business logic
 		-> /views				#format for the data being returned for each request
-	-> packages.json			#npm packages required to run project
+	-> package.json				#npm packages required to run project
 
 ---
 
@@ -66,7 +66,7 @@ Installation of required [NPM][npm] packages can be installed by running ```npm 
 
 Once the required libraries are installed the server can be run with the command ```mongod``` which will also start [MongoDB][mon] on your local system.
 
-Tests can be run with the command ```jasmine-node --autotest --color --coffee spec``` then opening up the test output URL.
+Tests can be run with the command ```jasmine-node --autotest --color --coffee spec```.
 
 ##### Overview
 
