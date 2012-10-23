@@ -93,16 +93,16 @@ Tests can be run with the command ```rake test``` then opening up the test outpu
 
 ```
 
-[gems]: http://gems.org
+[gems]: http://rubygems.org/
 [node]: http://nodejs.org/
-[haml]: http://haml.com
-[em]: http://eventmachine.com
-[td]: http://twisted.com
-[cs]: http://coffeescript.org
-[emca]: http://emca.org
-[v8]: http://v8.com
-[jas]: http://jasmine.com
-[bdd]: http://bdd.com
-[mon]: http://mongo.com
-[ruby]: http://ruby.com
+[haml]: http://haml.info/
+[em]: http://rubyeventmachine.com/
+[td]: http://twistedmatrix.com/
+[cs]: http://coffeescript.org/
+[emca]: http://en.wikipedia.org/wiki/ECMAScript
+[v8]: http://code.google.com/p/v8/
+[jas]: http://pivotal.github.com/jasmine/
+[bdd]: http://en.wikipedia.org/wiki/Behavior-driven_development
+[mon]: http://www.mongodb.org/
+[ruby]: http://www.ruby-lang.org/
 [npm]: https://npmjs.org/
