@@ -77,7 +77,7 @@ Tests can be run with the command ```jasmine-node --autotest --color --coffee sp
 	npm install
 	jasmine-node --color --coffee spec
 	mongod
-	node app/server.coffee
+	node app/server.js.coffee
 
 ```
 
