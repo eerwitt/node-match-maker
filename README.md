@@ -27,9 +27,9 @@ Using [Node.js][node] primarily for the base server component in this version. I
 
 All Javascript is written in [Coffeescript][cs].
 
-#### Jasmine
+#### Mocha
 
-For testing [Jasmine][jas] is used as the [BDD][bdd] testing suite of choice. This might be replaced as more mature Javascript testing frameworks are released.
+For testing [Mocha][moc] is used as the [BDD][bdd] testing suite of choice.
 
 #### MongoDB
 
@@ -40,7 +40,7 @@ The storage of user related information is stored in [MongoDB][mon] in order to 
 ## Project Layout
 
 	* /							#root project directory
-	-> /spec					#bdd tests
+	-> /test					#bdd tests
 		-> /models				#data abstraction layer tests
 		-> /controllers			#business logic
 		-> /views				#response format tests
@@ -75,9 +75,9 @@ Tests can be run with the command ```jasmine-node --autotest --color --coffee sp
 	# install node.js
 	cd /home/user/projects/match-maker
 	npm install
-	jasmine-node --color --coffee spec
 	mongod
-	node app/server.js.coffee
+	mocha test/*.coffee
+	coffee app/server.js.coffee
 
 ```
 
@@ -85,7 +85,7 @@ Tests can be run with the command ```jasmine-node --autotest --color --coffee sp
 [em]: http://rubyeventmachine.com/
 [td]: http://twistedmatrix.com/
 [cs]: http://coffeescript.org/
-[jas]: http://pivotal.github.com/jasmine/
+[moc]: http://visionmedia.github.com/mocha/
 [bdd]: http://en.wikipedia.org/wiki/Behavior-driven_development
 [mon]: http://www.mongodb.org/
 [npm]: https://npmjs.org/
