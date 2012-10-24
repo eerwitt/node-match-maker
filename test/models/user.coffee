@@ -32,8 +32,8 @@ describe 'User', ->
       done()
  
   it 'adds to the connection log', (done) ->
-    user = User.create name: "tester"
-    user.logConnection latency: 20, essid: "home", (connection) ->
-      connection.essid.should eql "home"
-      connection.latency.should eql 20
-      done()
+    User.create name: "tester", (error, user) ->
+      user.logConnection latency: 20, essid: "home", (connection) ->
+        connection.essid.should.eql "home"
+        connection.latency.should.eql 20
+        done()
