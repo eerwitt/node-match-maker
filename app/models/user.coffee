@@ -5,5 +5,9 @@ schema = mongoose.Schema
   lat: Number
   lng: Number
 
+User = mongoose.model 'User', schema
+
+User::uppercase = () ->
+  this.name.toUpperCase()
 
 module.exports = User
