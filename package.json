@@ -3,10 +3,10 @@
   "description": "A match making system to match players of online games.",
   "author": "Erik Erwitt <eerwitt@gmail.com>",
   "dependencies": {
-    "mongodb": "1.1.11"
+    "mongoose": "3.3.1"
   },
   "devDependencies": {
-    "jasmine-node": "1.0.26"
+    "mocha": "1.6.0"
   },
   "version": "0.0.1",
   "engine": "node = 0.8.12"
