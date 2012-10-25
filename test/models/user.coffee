@@ -28,3 +28,9 @@ describe 'User', ->
     Factory.build 'user', available: yes, (user) ->
       user.available.should.eql yes
       done()
+
+  it 'marks a user as unavailable', (done) ->
+    Factory.build 'user', available: yes, (user) ->
+      user.markUnavailable()
+      user.available.should.eql no
+      done()

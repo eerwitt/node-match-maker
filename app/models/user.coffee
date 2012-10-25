@@ -8,7 +8,7 @@ schema = mongoose.Schema
 
 User = mongoose.model 'User', schema
 
-User::uppercase = () ->
+User::uppercase = ->
   this.name.toUpperCase()
 
 User::logConnection = (options={}, callback) ->
@@ -16,5 +16,9 @@ User::logConnection = (options={}, callback) ->
   this.connections.push connection
 
   callback connection
+
+User::markUnavailable = ->
+  this.available = no
+  this.save()
 
 module.exports = User
