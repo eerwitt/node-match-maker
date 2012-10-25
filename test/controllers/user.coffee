@@ -1,11 +1,13 @@
 Factory = require '../factories/factories'
 User = require '../../app/models/user'
 
-userController = require '../../app/controllers/user'
+UserController = require '../../app/controllers/user'
+userController = null
 
 describe 'UserController', ->
   beforeEach ->
     User.collection.remove()
+    userController = new UserController
 
   it 'should start with 0 users in the test database', (done) ->
     User.find {}, (error, docs) ->
