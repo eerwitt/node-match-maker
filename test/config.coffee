@@ -1,7 +1,7 @@
 config = require '../config'
 fs = require 'fs'
 
-devConfigPath = './data/development.json'
+devConfigPath = './test/data/development.json'
 
 describe 'Config', ->
   beforeEach ->
