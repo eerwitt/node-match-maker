@@ -14,6 +14,6 @@ describe 'Config', ->
     config._parseConfig('{"test": 123}').test.should.eql 123
     done()
 
-  it 'reads a JSON file and returns a hahs', (done) ->
+  it 'reads a JSON file and returns a hash', (done) ->
     config._readConfig(devConfigPath).test.should.eql "value"
     done()
