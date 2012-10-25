@@ -21,11 +21,17 @@ class UserController
       user.logConnection options, callback
 
   nearbyUsers: (lat, lng, distance, callback) ->
+    if not distance?
+      earthRadius = 6378#km
+      range = 3000#km
+
+      distance = range / earthRadius
+
     User.collection.geoNear lng, lat,
       query:
         available: yes
-      uniqueDocs: false
-      sphereical: true
+      uniqueDocs: true
+      spherical: true
       maxDistance: distance,
       (error, users) ->
         throw error if error?
