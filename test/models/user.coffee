@@ -12,9 +12,9 @@ describe 'User', ->
       done()
 
   it 'records the current location of a user (lat, lng)', (done) ->
-    Factory.build 'user', lat: 20.0, lng: -20.0, (user) ->
-      user.lat.should.eql 20.0
-      user.lng.should.eql -20.0
+    Factory.build 'user', location: {lat: 20.0, lon: -20.0}, (user) ->
+      user.location.lon.should.eql -20.0
+      user.location.lat.should.eql 20.0
       done()
  
   it 'adds to the connection log', (done) ->

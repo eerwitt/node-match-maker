@@ -20,4 +20,16 @@ class UserController
 
       user.logConnection options, callback
 
+  nearbyUsers: (lat, lng, distance, callback) ->
+    User.collection.geoNear lng, lat,
+      query:
+        available: yes
+      uniqueDocs: false
+      sphereical: true
+      maxDistance: distance,
+      (error, users) ->
+        throw error if error?
+
+        callback users
+
 module.exports = UserController

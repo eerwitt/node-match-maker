@@ -6,7 +6,7 @@ userController = null
 
 describe 'UserController', ->
   beforeEach ->
-    User.collection.remove()
+    #User.collection.remove()
     userController = new UserController
 
   it 'should start with 0 users in the test database', (done) ->
@@ -39,4 +39,11 @@ describe 'UserController', ->
         done()
 
   it "finds a geographically close user", (done) ->
-    done()
+    Factory.create 'user', name: "geo test", (user) ->
+      user.setLocation 20.0, 20.0
+      userController.nearbyUsers 20.0, 20.0, 500, (users) ->
+        console.log users
+        users.length.should.eql 1
+        users[0].name.should.eql "geo test"
+
+        done()
