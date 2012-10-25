@@ -17,6 +17,4 @@ Factory.define 'user', User,
   latency: 20
   essid: "home"
 
-Factory.define 'user_controller', UserController
-
 module.exports = Factory

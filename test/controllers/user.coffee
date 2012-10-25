@@ -1,7 +1,7 @@
 Factory = require '../factories/factories'
-
-UserController = require '../../app/controllers/user'
 User = require '../../app/models/user'
+
+userController = require '../../app/controllers/user'
 
 describe 'UserController', ->
   beforeEach ->
@@ -15,12 +15,9 @@ describe 'UserController', ->
 
   it 'lists the available users for match making', (done) ->
     Factory.create 'user', name: 'test_1', available: yes, (user1) ->
-      User.find {available: yes}, (error, docs) ->
-        if error?
-          console.log error
-          throw error
-
-        docs.should.eql [user1]
+      userController.availableUsers (users) ->
+        users.length.should.eql 1
+        users[0]._id.should.eql user1._id
         done()
 
   it 'sets a user to unavailable for match making', (done) ->
