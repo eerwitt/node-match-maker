@@ -1,12 +1,14 @@
 Factory = require 'factory-lady'
+mongoose = require 'mongoose'
+
+# Connecting to a test db
+# TODO change connection string to read from config
+mongoose.connect 'mongodb://localhost/test'
 
 # Models
 User = require '../../app/models/user'
 
 # Libraries
-
-# Controllers
-UserController = require '../../app/controllers/user.coffee'
 
 Factory.define 'user', User,
   name: "test"
