@@ -23,3 +23,8 @@ describe 'User', ->
         connection.essid.should.eql "home"
         connection.latency.should.eql 20
         done()
+
+  it 'sets an available flag to show they are available', (done) ->
+    Factory.build 'user', available: yes, (user) ->
+      user.available.should.eql yes
+      done()

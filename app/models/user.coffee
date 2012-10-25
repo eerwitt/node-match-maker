@@ -1,6 +1,7 @@
 mongoose = require 'mongoose'
 schema = mongoose.Schema
   connections: Array
+  available: Boolean
   name: String
   lat: Number
   lng: Number
