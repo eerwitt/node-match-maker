@@ -14,4 +14,10 @@ class UserController
       user.markUnavailable()
       callback user
 
+  logConnection: (id, options, callback) ->
+    User.findById id, (error, user) ->
+      throw error if error?
+
+      user.logConnection options, callback
+
 module.exports = UserController

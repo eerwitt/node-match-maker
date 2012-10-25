@@ -29,7 +29,14 @@ describe 'UserController', ->
         done()
 
   it "logs a user's connection information", (done) ->
-    done()
+    Factory.create 'user', (user) ->
+      userController.logConnection user._id, essid: "home", strength: 2, ip: "127.0.0.1", latency: 20, (connection) ->
+        connection.essid.should.eql "home"
+        connection.strength.should.eql 2
+        connection.ip.should.eql "127.0.0.1"
+        connection.latency.should.eql 20
+
+        done()
 
   it "finds a geographically close user", (done) ->
     done()
