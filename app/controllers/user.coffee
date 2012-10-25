@@ -7,4 +7,11 @@ class UserController
 
       callback users
 
+  markUserUnavailable: (id, callback) ->
+    User.findById id, (error, user) ->
+      throw error if error?
+
+      user.markUnavailable()
+      callback user
+
 module.exports = UserController
