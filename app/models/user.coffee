@@ -3,9 +3,7 @@ schema = mongoose.Schema
   connections: Array
   available: Boolean
   name: String
-  location:
-    lon: Number
-    lat: Number
+  location: Array
 
 schema.index location: '2d'
 
@@ -26,8 +24,7 @@ User::markUnavailable = ->
 
 # Workaround for order consistancy
 User::setLocation = (lat, lng) ->
-  this.location.lon = lng
-  this.location.lat = lat
+  this.location = [lng, lat]
   this.save()
 
 module.exports = User

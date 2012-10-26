@@ -39,10 +39,10 @@ describe 'UserController', ->
         done()
 
   it "finds a geographically close user", (done) ->
-    Factory.create 'user', name: "geo test", available: yes, (user) ->
-      user.setLocation 20.0, 20.0
-      userController.nearbyUsers 20.0, 20.0, 1, (users) ->
+    Factory.create 'user', name: "geo test", available: yes, location: [-20, 20], (user) ->
+
+      userController.nearbyUsers 20, -20, 1, (users) ->
         users.length.should.eql 1
-        users[0].name.should.eql "geo test"
+        users[0].obj.name.should.eql "geo test"
 
         done()

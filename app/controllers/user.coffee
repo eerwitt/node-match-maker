@@ -36,6 +36,6 @@ class UserController
       (error, users) ->
         throw error if error?
 
-        callback users
+        callback users.results
 
 module.exports = UserController
